@@ -1,154 +1,101 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <?php
+<?php
 
+// Question 01:
 
-        // QUESTION NO 1==========================================================================================
+// Your client said that he needs a dropdown, which contains all days of the running month. Sometimes we fill up a registration form that, which date of birth. So find out in google (get number of days in specific month php) and do this assignment using a for loop.
 
+// Day quantity is not equal for every month. Like as - february - 28, March - 31, april - 30
 
+// So days of running month should dynamic (by php build in function)
+echo "<h1> Problem No 1</h1>";  
+    echo "<br>";  
 
-        // Let’s make a result grade calculator…
-
-        // Rishita’s subject marks: SubjectA = 75, SubjectB = 80, SubjectC = 65, SubjectD = 90.
-
-        // Result Calculation formula: Sum all subjects marks and divided by total subject quantity. 
-
-        // From this given formula, you will get a mark. Show the Grade message by the mark.
-
-        // A+ = 80 - 100 
-
-        // A   = 70 - 79
-
-        // A-  = 60 - 69
-
-        // B   = 50 - 59
-
-        // C   = 40 - 49
-
-        // F   = 01 - 39 
-
-        // Firstly you have to calculate the average mark of Rishita.
-
-        // Secondly you have to show the grade message (Like as: “You got A+”) by following this grading range.
-
-        // // 
-
-        // defining variable 
-        $SubjectA = 75;
-        $SubjectB = 80;
-        $SubjectC = 65;
-        $SubjectD = 90;
-
+    $month_name = date("F");
+    $numberOfDays = date("t");
+    echo "Month Name:".$month_name."-". $numberOfDays;
     
-        // calculating sum of all subjects 
-        $totalMarks= $SubjectA + $SubjectB + $SubjectC + $SubjectD;
-        echo "<h1>Total Marks: {$totalMarks}</h1> <br>";
+    // Question 02: 
 
-        // average number of subject 
-        $averageMarks=$totalMarks / 4;
-        echo "<h1>Average Marks: {$averageMarks}</h1>";
+    // If we print 1-100, our output will be 100 times. But this time you have print out only the odd (বিজোড়) number within 1-100.
 
+    // You have to rotate from 1 to 100.
 
-        // cheking grades
-        if($averageMarks >= 80 && $averageMarks <= 100){
-            echo "<h1> Your average number of subjects is {$averageMarks}.You number is between 80 to 100 and You Have got <span style='color:green'>A+</span> </h1>";
+    // Your output message should like that, “3 is a odd number”
+
+    // Not need to print even number
+
+    echo "<h1> Problem No 2</h1>";  
+    echo "<br>";  
+
+    $i=1;
+    while($i<100){
+        $i++;
+        if($i% 2 !=0){
+            echo $i." "."is a odd number"."<br>";
         }
-        elseif($averageMarks >= 70 && $averageMarks <= 79){
-            echo "<h1> Your average number of subjects is {$averageMarks}.You number is between 70 to 79 and You Have got <span style='color:green'>A</span> </h1>";
-        }
-
-        elseif($averageMarks >= 60 && $averageMarks <= 69){
-            echo "<h1> Your average number of subjects is {$averageMarks}.You number is between 60 to 69 and You Have got <span style='color:green'>A-</span> </h1>";
-        }
-
-
-        elseif($averageMarks >= 50 && $averageMarks <= 59){
-            echo "<h1> Your average number of subjects is {$averageMarks}.You number is between 50 to 59 and You Have got <span style='color:green'>B</span> </h1>";
-        }
-
-        elseif($averageMarks >= 40 && $averageMarks <= 49){
-            echo "<h1> Your average number of subjects is {$averageMarks}.You number is between 40 to 49 and You Have got <span style='color:green'>C</span> </h1>";
-        }
-
-
-        else{
-            echo "<h1 style='color:red'>You Failed in exam.Start Reading From Now. </h1>";
-        }
-    
+    }
 
 
 
-    // QUESTION NO 2==========================================================================================
+//     Question 03: 
+
+// 		Factorial - I think everyone knows the word. Factorial of 4 is given below:
+
+// 4! = 4*3*2*1 = 24
+
+// 6! = 6*5*4*3*2*1 = 720  
+
+// So let’s calculate the factorial of 7.
+
+echo "<h1> Problem No 3</h1>";  
+echo "<br>";  
+
+$number = 7;
+$factorial = 1;
+for($i = $number; $i>=1; $i--){
+    $factorial*=$i;
+}
+echo "Factorial of {$number} is {$factorial}.";
 
 
 
+// Question 04: 
 
-        //     Let’s make a game with your bike… You are riding a bike, your bike has some functionalities, these are… start, stop, break, gear, signal, headlight. 
+// 	Print out from 100 - 1 using a while loop. 
 
-        // When you click on the power/start button, your bike takes a start, 
+// You must use decrement operator
+echo "<h1> Problem No 4</h1>";  
+echo "<br>";  
 
-        // When you click stop, your bike takes a stop, 
-
-        // When you press the break, your bike take break, 
-
-        // when you give the gear, your bike move faster and faster, 
-
-        // when you press the signal button, your bike shows a signal light.
-
-        // When you press the headlight button, your bike’s headlight will start.
-
-        
-        // defining variable conditon of bike 
-        $button = "break";
-
-
-        // checking present situation of bike
-        
-        switch($button){
-            case ("start"):
-                echo "Bike Started";
-                break;
-
-            case ("stop"):
-                echo "Bike Stoped";
-                break;
-
-            case ("break"):
-                echo "Bike Break";
-                break;
-
-            case ("gear"):
-                echo "Bike is faster and faster";
-                break;
-
-            case ("signal"):
-                echo "Bike is showing a signal";
-                break;
-                
-            case ("headlight"):
-                echo "Bike's headlight has started";
-                break;
-            
-                default:
-                    echo "your have inputed wrong input";
-                
-            }
-        
+for($i=100; $i>=1; $i--){
+    echo $i." ";
+}
 
 
 
 
+// Question 05: 
+
+// You have an array of your purchased product items. 
+
+// ['apple', 'orange', 'banana', 'mango']
+
+// Show all products as a table list.
+
+// Output should like that: “sl- 1 and product - apple”
+echo "<h1> Problem No 5</h1>";  
+echo "<br>";  
+
+$products = ['apple', 'orange', 'banana', 'mango'];
+
+for($i=0; $i < count($products); $i++){
+
+    echo "sl- " .$i." and product -".$products[$i]."<br>";
+
+
+}
 
 
 
 
-    ?>
-</body>
-</html>
+ ?>
